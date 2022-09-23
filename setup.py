@@ -8,6 +8,7 @@ setuptools.setup(
     description="A Github API-based Robot",
     install_requires=[
         'requests>=2.28.1'
+        'wget>=3.2'
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
