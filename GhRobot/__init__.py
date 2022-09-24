@@ -12,8 +12,7 @@ def GetAllLatestDownloadURL(User, Repo):
   LoadJson = json.loads(IntJson, strict=False)
   try:
     if LoadJson["message"] == "Not Found":
-      print("Related files not found")
-      exit(1)
+      return("FNT")
   except:
     pass
   else:
@@ -35,14 +34,13 @@ def GetLatestDownloadURL(User, Repo, Order):
   LoadJson = json.loads(IntJson, strict=False)
   try:
     if LoadJson["message"] == "Not Found":
-      print("Related files not found")
-      exit(1)
+      return("FNT")
   except:
     pass
   try:
     return(LoadJson["assets"][Order]["browser_download_url"])
   except:
-    return("File Not Found")
+    return("FNT")
 
 # 获取指定格式Latest-Release链接
 def GetFormatLatestDownloadURL(User, Repo, Format):
@@ -53,8 +51,7 @@ def GetFormatLatestDownloadURL(User, Repo, Format):
   LoadJson = json.loads(IntJson, strict=False)
   try:
     if LoadJson["message"] == "Not Found":
-      print("Related Files Not Found")
-      exit(1)
+      return("FNT")
   except:
     pass
   else:
