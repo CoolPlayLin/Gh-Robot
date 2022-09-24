@@ -3,7 +3,7 @@ import setuptools
 
 setuptools.setup(
     name="Gh-Robots",
-    version="V0.0.1",
+    version="V0.0.2",
     author="CoolPlayLin",
     author_email="help@api-coolplaylin.eu.org",
     description="A Github API-based Robot",
