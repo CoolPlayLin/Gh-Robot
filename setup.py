@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="Gh-Robots",
-    version="V0.0.2.2",
+    version="V0.0.2.3",
     author="CoolPlayLin",
     author_email="help@api-coolplaylin.eu.org",
     description="A Github API-based Robot",
