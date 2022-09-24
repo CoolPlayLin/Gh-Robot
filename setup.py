@@ -2,8 +2,6 @@ import setuptools
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
-with open("requirements.txt", "r") as fh:
-    requires = fh.read()
 
 setuptools.setup(
     name="Gh-Robots",
@@ -19,7 +17,9 @@ setuptools.setup(
         "Bug Report": "https://github.com/CoolPlayLin/Gh-Robot/issues/new/choose"
     },
     url="https://github.com/CoolPlayLin/Gh-Robot",
-    install_requires=requires,
+    install_requires=[
+        'requests==2.28.1'
+    ],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
