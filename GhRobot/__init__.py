@@ -1,10 +1,12 @@
 import requests
 import json
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 
 # 获取所有Release链接
 def GetAllLatestDownloadURL(User, Repo):
     UrlList = []
+    requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
     ApiURL="https://api.github.com/repos/"+User+"/"+Repo+"/releases/latest"
     IntJson = requests.get(url=ApiURL, verify=False).text
     LoadJson = json.loads(IntJson, strict=False)
@@ -23,4 +25,4 @@ def GetAllLatestDownloadURL(User, Repo):
             x += 1
     except:
         pass
-    print(UrlList)
+    return(UrlList)
