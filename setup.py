@@ -14,7 +14,8 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     license='GPL V3.0',
     project_urls={
-        "Bug Report": "https://github.com/CoolPlayLin/Gh-Robot/issues/new/choose"
+        "Bug Report": "https://github.com/CoolPlayLin/Gh-Robot/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5BBug%5D%3A",
+        "Feature Request": "https://github.com/CoolPlayLin/Gh-Robot/issues/new?assignees=&labels=enhancement&template=feature-request.md&title=%5BFeature+Request%5D"
     },
     url="https://github.com/CoolPlayLin/Gh-Robot",
     install_requires=[
