@@ -7,7 +7,7 @@ setuptools.setup(
     author="CoolPlayLin",
     author_email="help@api-coolplaylin.eu.org",
     description="A Github API-based Robot",
-    long_description="long_description",
+    long_description=long_description,
     long_description_content_type='text/markdown',
     license='GPL V3.0',
     project_urls={
