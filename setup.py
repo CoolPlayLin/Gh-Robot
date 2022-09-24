@@ -20,6 +20,6 @@ setuptools.setup(
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: GPL V3.0"
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
     ]
 )
