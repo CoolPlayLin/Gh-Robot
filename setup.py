@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="Gh-Robots",
-    version="V0.0.2",
+    version="V0.0.2.1",
     author="CoolPlayLin",
     author_email="help@api-coolplaylin.eu.org",
     description="A Github API-based Robot",
@@ -18,8 +18,7 @@ setuptools.setup(
     },
     url="https://github.com/CoolPlayLin/Gh-Robot",
     install_requires=[
-        'requests>=2.28.1'
-        'wget>=3.2'
+        'requests>=2.28.1',
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
