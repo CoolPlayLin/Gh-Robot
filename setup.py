@@ -2,7 +2,7 @@ from setuptools import find_packages
 import setuptools
 
 setuptools.setup(
-    name="Gh-Robot",
+    name="Gh-Robots",
     version="V0.0.1",
     author="CoolPlayLin",
     author_email="help@api-coolplaylin.eu.org",
@@ -20,6 +20,6 @@ setuptools.setup(
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: GPL V3.0"
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
     ]
 )
