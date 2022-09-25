@@ -15,8 +15,6 @@ def GetAllLatestDownloadURL(User, Repo):
       return("FNT")
   except:
     pass
-  else:
-      pass
   try:
       x = 0
       while True:
