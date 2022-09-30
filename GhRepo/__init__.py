@@ -31,5 +31,7 @@ def GetAllRepoInformationToCSV(User):
                     DESCRIPTION = LoadJson[x]["description"]
                 writer.writerow([LoadJson[x]["name"], DESCRIPTION, LICENSES, LoadJson[x]["full_name"], LoadJson[x]["html_url"], LoadJson[x]["git_url"], LoadJson[x]["ssh_url"], LoadJson[x]["clone_url"]])
                 x += 1
-    except:
+    except IndexError:
         return(0)
+    except:
+        return(1)
