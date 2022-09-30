@@ -20,7 +20,7 @@ def GetUserAccountPicture(User, UseWgetDownload):
         try:
             return(PictureURL)
         except:
-            return("FNT")
+            return(1)
     else:
         wget.download(PictureURL, out="Account.jpg")
 
@@ -39,7 +39,7 @@ def GetUserFollowingList(User, DownloadAccountPicture):
     LoadJson = json.loads(InitJson, strict=False)
     try:
         if LoadJson["message"] == "Not Found":
-            return("FNT")
+            return(1)
     except:
         pass
     if DownloadAccountPicture == False:
@@ -77,7 +77,7 @@ def GetUserFollowersList(User, DownloadAccountPicture):
     LoadJson = json.loads(InitJson, strict=False)
     try:
         if LoadJson["message"] == "Not Found":
-            return("FNT")
+            return(1)
     except:
         pass
     if DownloadAccountPicture == False:
