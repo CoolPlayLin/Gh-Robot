@@ -27,12 +27,3 @@ jobs:
         pip install build
     - name: Build package
       run: python -m build
-  comment:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Commit Success
-      if: success()
-      uses: github-actions-up-and-running/pr-comment@v1.0.0
-      with:
-        repo-token: ${{ secrets.GITHUB_COMMENT_TOKEN }}
-        message: Your PR check has been completed and passed👍, but still needs 1 review
