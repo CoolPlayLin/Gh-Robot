@@ -20,9 +20,10 @@ def GetAllLatestDownloadURL(User, Repo):
       while True:
           UrlList.append(LoadJson["assets"][x]["browser_download_url"])
           x += 1
+  except IndexError:
+    return(UrlList)
   except:
-      pass
-  return(UrlList)
+    return(1)
 
 # 获取指定Latest-Release链接
 def GetLatestDownloadURL(User, Repo, Order):
@@ -63,6 +64,7 @@ def GetFormatLatestDownloadURL(User, Repo, Format):
       else:
         pass
       x += 1
+  except IndexError:
+    return(UrlList)
   except:
-      pass
-  return(UrlList)
+    return(1)
