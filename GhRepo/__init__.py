@@ -11,7 +11,7 @@ def GetAllRepoInformationToCSV(User):
     LoadJson = json.loads(IntJson, strict=False)
     try:
         if LoadJson["message"] == "Not Found":
-            return("FNT")
+            return(1)
     except:
         pass
     try:
