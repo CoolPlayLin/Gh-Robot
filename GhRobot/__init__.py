@@ -53,8 +53,6 @@ def GetFormatLatestDownloadURL(User, Repo, Format):
       return(1)
   except:
     pass
-  else:
-      pass
   try:
     x = 0
     while True:
