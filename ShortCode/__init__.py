@@ -4,7 +4,7 @@ import json
 # 从URL获取JSON加载后输出
 def GetAndLoadJsonFromURL(URL, UseLoadJSON, SSL):
     try:
-        InitJSON = requests.get(url=URL, verify=bool(SSL))
+        InitJSON = requests.get(url=URL, verify=bool(SSL)).text
     except:
         return(1)
     try:
