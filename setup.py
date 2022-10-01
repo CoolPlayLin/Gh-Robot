@@ -21,7 +21,8 @@ setuptools.setup(
     url="https://github.com/CoolPlayLin/Gh-Robot",
     install_requires=[
         'requests>=2.28.1',
-        'wget>=3.2'
+        'wget>=3.2',
+        'pandas>=1.5.0'
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
