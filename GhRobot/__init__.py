@@ -2,6 +2,7 @@ import requests
 import json
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
+from .Search import *
 
 # 获取所有Latest-Release链接
 def GetAllLatestDownloadURL(User, Repo):
