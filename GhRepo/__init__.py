@@ -33,5 +33,6 @@ def GetAllRepoInformationToCSV(User):
                 x += 1
     except IndexError:
         return(0)
-    except:
+    except Exception as WhyError:
+        print(WhyError)
         return(1)
