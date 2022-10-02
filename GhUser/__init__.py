@@ -7,12 +7,8 @@ import calendar
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 # 获取指定用户头像
-def GetUserAccountPicture(User, UseWgetDownload):
-    if bool(UseWgetDownload) == True:
-        pass
-    elif bool(UseWgetDownload) == False:
-        pass
-    requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+def GetUserAccountPicture(User, UseWgetDownload=False):
+    requests.packages.urllib3.disable_warnings(InsecureRequestWarning) #禁用SSL证书验证警告
     ApiURL = "https://api.github.com/users/"+User
     InitJson = requests.get(url=ApiURL, verify=False).text
     LoadJson = json.loads(InitJson, strict=False)
@@ -32,13 +28,9 @@ def GetUserAccountPicture(User, UseWgetDownload):
         return(0)
 
 # 获取指定用户关注列表
-def GetUserFollowingList(User, DownloadAccountPicture):
+def GetUserFollowingList(User, DownloadAccountPicture=False):
     FollowingList = []
-    if bool(DownloadAccountPicture) == True:
-        pass
-    elif bool(DownloadAccountPicture) == False:
-        pass
-    requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+    requests.packages.urllib3.disable_warnings(InsecureRequestWarning) #禁用SSL证书验证警告
     ApiURL = "https://api.github.com/users/"+User+"/following"
     InitJson = requests.get(url=ApiURL, verify=False).text
     LoadJson = json.loads(InitJson, strict=False)
@@ -72,13 +64,9 @@ def GetUserFollowingList(User, DownloadAccountPicture):
             return(1)
 
 # 获取指定用户被关注列表
-def GetUserFollowersList(User, DownloadAccountPicture):
+def GetUserFollowersList(User, DownloadAccountPicture=False):
     FollowersList = []
-    if bool(DownloadAccountPicture) == True:
-        pass
-    elif bool(DownloadAccountPicture) == False:
-        pass
-    requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+    requests.packages.urllib3.disable_warnings(InsecureRequestWarning) #禁用SSL证书验证警告
     ApiURL = "https://api.github.com/users/"+User+"/followers"
     InitJson = requests.get(url=ApiURL, verify=False).text
     LoadJson = json.loads(InitJson, strict=False)
@@ -113,7 +101,7 @@ def GetUserFollowersList(User, DownloadAccountPicture):
 
 # 将用户数据导入到CSV中
 def GetUserDateToCSV(User):
-    requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+    requests.packages.urllib3.disable_warnings(InsecureRequestWarning) #禁用SSL证书验证警告
     ApiURL = "https://api.github.com/users/"+User
     InitJSON = requests.get(url=ApiURL, verify=False).text
     LoadJSON = json.loads(InitJSON, strict=False)

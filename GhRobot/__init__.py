@@ -7,7 +7,7 @@ from .Search import *
 # 获取所有Latest-Release链接
 def GetAllLatestDownloadURL(User, Repo):
   UrlList = []
-  requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+  requests.packages.urllib3.disable_warnings(InsecureRequestWarning) #禁用SSL证书验证警告
   ApiURL="https://api.github.com/repos/"+User+"/"+Repo+"/releases/latest"
   IntJson = requests.get(url=ApiURL, verify=False).text
   LoadJson = json.loads(IntJson, strict=False)
@@ -29,7 +29,7 @@ def GetAllLatestDownloadURL(User, Repo):
 
 # 获取指定Latest-Release链接
 def GetLatestDownloadURL(User, Repo, Order):
-  requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+  requests.packages.urllib3.disable_warnings(InsecureRequestWarning) #禁用SSL证书验证警告
   ApiURL="https://api.github.com/repos/"+User+"/"+Repo+"/releases/latest"
   IntJson = requests.get(url=ApiURL, verify=False).text
   LoadJson = json.loads(IntJson, strict=False)
@@ -47,7 +47,7 @@ def GetLatestDownloadURL(User, Repo, Order):
 # 获取指定格式Latest-Release链接
 def GetFormatLatestDownloadURL(User, Repo, Format):
   UrlList = []
-  requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+  requests.packages.urllib3.disable_warnings(InsecureRequestWarning) #禁用SSL证书验证警告
   ApiURL="https://api.github.com/repos/"+User+"/"+Repo+"/releases/latest"
   IntJson = requests.get(url=ApiURL, verify=False).text
   LoadJson = json.loads(IntJson, strict=False)

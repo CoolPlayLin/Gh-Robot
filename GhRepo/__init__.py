@@ -5,7 +5,7 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 # 将用户全部的Repo数据导入到Repo.csv文件中
 def GetAllRepoInformationToCSV(User):
-    requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+    requests.packages.urllib3.disable_warnings(InsecureRequestWarning) #禁用SSL证书验证警告
     ApiURL = "https://api.github.com/users/" + User + "/repos"
     IntJson = requests.get(url=ApiURL, verify=False).text
     LoadJson = json.loads(IntJson, strict=False)
