@@ -15,7 +15,7 @@ def SearchRepo(Repo, Amount):
         except:
             return(1)
     Date = []
-    requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+    requests.packages.urllib3.disable_warnings(InsecureRequestWarning) #禁用SSL证书验证警告
     InitJSON = requests.get(url=ApiURL, verify=False).text
     LoadJSON = json.loads(InitJSON)
     if LoadJSON["total_count"] == 0:
@@ -50,7 +50,7 @@ def SearchUser(User, Amount):
         except:
             return(1)
     Date = []
-    requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+    requests.packages.urllib3.disable_warnings(InsecureRequestWarning) #禁用SSL证书验证警告
     InitJSON = requests.get(url=ApiURL, verify=False).text
     LoadJSON = json.loads(InitJSON)
     if LoadJSON["total_count"] == 0:
@@ -112,7 +112,7 @@ def SearchManyRepo(Repo, Amount, Page):
 # 生成指定数量的User索结果到JSON
 def SearchManyUser(User, Amount, Page):
     Date = []
-    requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+    requests.packages.urllib3.disable_warnings(InsecureRequestWarning) #禁用SSL证书验证警告
     try:
         int(Page)
         int(Amount)
