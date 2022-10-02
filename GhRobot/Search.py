@@ -11,7 +11,6 @@ def SearchRepo(Repo, Amount):
             if int(Amount) > 100:
                 print("Github API supports a maximum of 100 pages, and the number you currently enter will not work")
             ApiURL = "https://api.github.com/search/repositories?q=" + str(Repo) + "&per_page=" + str(int(Amount))
-            print(ApiURL)
         except:
             return(1)
     Date = []
@@ -46,7 +45,6 @@ def SearchUser(User, Amount):
             if int(Amount) > 100:
                 print("Github API supports a maximum of 100 pages, and the number you currently enter will not work")
             ApiURL = "https://api.github.com/search/users?q=" + str(User) + "&per_page=" + str(int(Amount))
-            print(ApiURL)
         except:
             return(1)
     Date = []
