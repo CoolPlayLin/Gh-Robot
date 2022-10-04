@@ -49,7 +49,6 @@ pip install setuptools
 python setup.py install
 ```
 
-
 # Development Progress
 
 **Developed Modules:**
