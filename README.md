@@ -14,7 +14,9 @@
 
 </p>
 
-## 👍 **Install**
+##  **Installation**
+
+- ### **Install Online(Recommend)** 👍
 
 **Pypi**
 
@@ -28,6 +30,26 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ Gh-Robots
 ```
 
 [More Mirror Station](https://github.com/CoolPlayLin/Gh-Robot/docs/Mirror%20Station.md)
+
+- ### Offline Installation 
+
+1. Clone
+```
+git clone https://github.com/coolplaylin/Gh-Robot
+cd Gh-Robot
+```
+
+2. Install `SetupTool`
+```
+pip install setuptools
+```
+
+3. Install
+```
+python setup.py install
+```
+
+
 # Development Progress
 
 **Developed Modules:**
