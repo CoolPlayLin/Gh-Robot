@@ -1,7 +1,7 @@
 # Gh-Robot
 
 <p align="center">
-<img src="https://api.nationalstore.shop/https://github.com/CoolPlayLin/CoolPlayLin/blob/main/assets/robot.png" width="50" height="50">
+<img src="https://api.nationalstore.shop/https://github.com/CoolPlayLin/CoolPlayLin/blob/main/assets/Robot.png" width="50" height="50">
 </p>
 
 <p align="center">A Github API-based Robot</p>
