@@ -27,7 +27,7 @@ pip install Gh-Robots
 pip install -i https://mirrors.aliyun.com/pypi/simple/ Gh-Robots
 ```
 
-[More Mirror Station](https://github.com/CoolPlayLin/Gh-Robot/docs/Mirror%20Station.md)
+[More Mirror Station](https://github.com/CoolPlayLin/Gh-Robot/blob/main/docs/Mirror%20Station.md)
 # Development Progress
 
 **Developed Modules:**
