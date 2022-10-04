@@ -1,7 +1,7 @@
 # Gh-Robot
 
 <p align="center">
-<img src="https://api.nationalstore.shop/https://github.com/CoolPlayLin/CoolPlayLin/blob/main/assets/robot.png" width="50" height="50">
+<img src="https://api.nationalstore.shop/https://github.com/CoolPlayLin/CoolPlayLin/blob/main/assets/Robot.png" width="50" height="50">
 </p>
 
 <p align="center">A Github API-based Robot</p>
@@ -14,12 +14,20 @@
 
 </p>
 
-## 🤖 Install
+## 👍 **Install**
+
+**Pypi**
 
 ```
 pip install Gh-Robots
 ```
 
+**Aliyun**
+```
+pip install -i https://mirrors.aliyun.com/pypi/simple/ Gh-Robots
+```
+
+[More Mirror Station](https://github.com/CoolPlayLin/Gh-Robot/docs/Mirror%20Station.md)
 # Development Progress
 
 **Developed Modules:**
@@ -30,16 +38,17 @@ pip install Gh-Robots
 - GhUser
 - ShortCode
 
-# Build
+# 🥰 Build
 
 ### **Clone Repo**
 
 ```
 git clone https://github.com/CoolPlayLin/Gh-Robot
-cd Gh-Robots #Go to the Repo file directory
+
+cd Gh-Robots
 ```
 
-### **Install Build Package**
+### **Install Build**
 ```
 pip install build
 ```
