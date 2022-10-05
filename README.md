@@ -1,7 +1,7 @@
 # Gh-Robot
 
 <p align="center">
-<img src="https://api.nationalstore.shop/https://github.com/CoolPlayLin/CoolPlayLin/blob/main/assets/Robot.png" width="50" height="50">
+<img src="https://cdn.api-go.asia/assets/Robot.png" width="50" height="50">
 </p>
 
 <p align="center">A Github API-based Robot</p>
@@ -16,7 +16,7 @@
 
 ##  **Installation**
 
-- ### **Install Online(Recommend)** 👍
+- ### **Online Installation(Recommend)** 👍
 
 **Pypi**
 
