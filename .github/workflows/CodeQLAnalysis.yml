@@ -12,8 +12,6 @@
 name: "CodeQL"
 
 on:
-  push:
-    branches: [ "Dev" ]
   pull_request:
     types:
       - "opened"
