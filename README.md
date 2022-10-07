@@ -31,7 +31,7 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ Gh-Robots
 
 [More Mirror Station](https://github.com/coolplaylin/Gh-Robot/blob/main/docs/Mirror%20Station.md)
 
-- ### Offline Installation 
+- ### Offline Installation 🤔
 
 1. Clone
 ```
@@ -58,6 +58,7 @@ python setup.py install
 - GhToCsv
 - GhUser
 - ShortCode
+- CNetTool
 
 # 🥰 Build
 
@@ -66,13 +67,14 @@ python setup.py install
 ```
 git clone https://github.com/CoolPlayLin/Gh-Robot
 
-cd Gh-Robots
+cd Gh-Robot
 ```
 
 ### **Install Build**
 ```
 pip install build
 ```
+
 ### **Build**
 ```
 python -m build
