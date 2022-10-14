@@ -10,8 +10,8 @@
 <p align="center">
 <img src="https://img.shields.io/github/license/CoolPlayLin/Gh-Robot?style=flat-square">
 <img src="https://img.shields.io/pypi/dm/Gh-Robot?style=flat-square">
+<img src="https://img.shields.io/pypi/v/Gh-Robots?style=flat-square">
 <img src="https://img.shields.io/github/issues-pr/CoolPlayLin/Gh-Robot?style=flat-square">
-
 </p>
 
 ##  **Installation**
@@ -62,6 +62,8 @@ python setup.py install
 
 # 🥰 Build
 
+## Manual
+
 ### **Clone Repo**
 
 ```
@@ -79,3 +81,13 @@ pip install build
 ```
 python -m build
 ```
+
+## One-Click
+
+[Linux](https://api.nationalstore.shop/https://github.com/CoolPlayLin/Gh-Robot/blob/main/Auto/build.sh)
+[Windows](https://api.nationalstore.shop/https://github.com/CoolPlayLin/Gh-Robot/blob/main/Auto/build.bat)
+
+**Notes:**
+
+- *Your Windows/Linux had to have Python & Git installed*
+- *Your Python has to come with a pip package manager*
