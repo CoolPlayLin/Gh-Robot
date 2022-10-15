@@ -8,10 +8,10 @@
 
 
 <p align="center">
-<img src="https://img.shields.io/github/license/CoolPlayLin/Gh-Robot?style=flat-square">
+<a href="https://github.com/CoolPlayLin/Gh-Robot/blob/main/LICENSE"><img src="https://img.shields.io/github/license/CoolPlayLin/Gh-Robot?style=flat-square"></a>
 <img src="https://img.shields.io/pypi/dm/Gh-Robot?style=flat-square">
-<img src="https://img.shields.io/pypi/v/Gh-Robots?style=flat-square">
-<img src="https://img.shields.io/github/issues-pr/CoolPlayLin/Gh-Robot?style=flat-square">
+<a href="https://pypi.org/project/Gh-Robots/"><img src="https://img.shields.io/pypi/v/Gh-Robots?style=flat-square"></a>
+<a href="https://github.com/CoolPlayLin/Gh-Robot/pulls"><img src="https://img.shields.io/github/issues-pr/CoolPlayLin/Gh-Robot?style=flat-square"></a>
 </p>
 
 ##  **Installation**
