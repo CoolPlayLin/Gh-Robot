@@ -84,8 +84,8 @@ python -m build
 
 ## One-Click
 
-[Linux](https://api.nationalstore.shop/https://github.com/CoolPlayLin/Gh-Robot/blob/main/Auto/build-linux.sh)
-[Windows](https://api.nationalstore.shop/https://github.com/CoolPlayLin/Gh-Robot/blob/main/Auto/build-win.sh)
+[Linux](https://raw.githubusercontent.com/CoolPlayLin/Gh-Robot/main/Auto/build-win.bat)
+[Windows](https://raw.githubusercontent.com/CoolPlayLin/Gh-Robot/main/Auto/build-linux.sh)
 
 **Notes:**
 
