@@ -1,1 +1,0 @@
-print("There is no Mode here".upper())
