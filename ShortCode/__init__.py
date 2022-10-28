@@ -1,2 +1,1 @@
-from .Code import *
-from .Tool import *
+from . import (Code, Tool)
