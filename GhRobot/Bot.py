@@ -5,8 +5,8 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 # 获取所有Latest-Release链接
 def GetAllLatestDownloadURL(User, Repo, Format=None):
   requests.packages.urllib3.disable_warnings(InsecureRequestWarning) #禁用SSL证书验证警告
+  UrlList = []
   if bool(Format) is False:
-    UrlList = []
     ApiURL="https://api.github.com/repos/{}/{}/releases/latest".format(User, Repo)
     IntJson = requests.get(url=ApiURL, verify=False).text
     LoadJson = json.loads(IntJson, strict=False)
@@ -26,7 +26,6 @@ def GetAllLatestDownloadURL(User, Repo, Format=None):
       print(WhyError)
       return(1)
   else:
-    UrlList = []
     ApiURL="https://api.github.com/repos/{}/{}/releases/latest".format(User, Repo)
     IntJson = requests.get(url=ApiURL, verify=False).text
     LoadJson = json.loads(IntJson, strict=False)
