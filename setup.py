@@ -25,7 +25,10 @@ setuptools.setup(
         'pandas>=1.5.0'
     ],
     classifiers=[
+        "Development Status :: 2 - Pre-Alpha",
+        "Natural Language :: English",
         "Programming Language :: Python :: 3",
+        "Topic :: Software Development :: Libraries :: Python Modules",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
     ]
 )
