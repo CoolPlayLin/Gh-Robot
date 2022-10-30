@@ -4,7 +4,7 @@
 <img src="https://cdn.api-go.asia/assets/img/Robot.png" width="50" height="50">
 </p>
 
-<p align="center">A Github API-based Robot</p>
+<p align="center">一个基于Github API的爬虫</p>
 
 
 <p align="center">
@@ -14,17 +14,23 @@
 <a href="https://github.com/CoolPlayLin/Gh-Robot/pulls"><img src="https://img.shields.io/github/issues-pr/CoolPlayLin/Gh-Robot?style=flat-square"></a>
 </p>
 
-##  **Installation**
+<p align="center">
+<a>简体中文 </a>
+·
+<a href="./README.md">English</a>
+</p>
+
+##  **安装**
 
 ```
 pip install Gh-Robots
 ```
 
-[Mirror Station](https://github.com/coolplaylin/Gh-Robot/blob/main/docs/Mirror%20Station.md)
+[使用镜像站点](./Mirror.md)
 
-# 🥰 Build
+# 🥰 本地构建
 
-### **Clone Repo**
+### **克隆仓库**
 
 ```
 git clone https://github.com/CoolPlayLin/Gh-Robot
@@ -32,24 +38,24 @@ git clone https://github.com/CoolPlayLin/Gh-Robot
 cd Gh-Robot
 ```
 
-### **Install Build**
+### **安装`Build`工具**
 ```
 pip install build
 ```
 
-### **Build**
+### **构建**
 ```
 python -m build
 ```
 
-### Checkout
->*You can choose to use the stable or development version*
+### 切换版本
+>*你可以通过这些命令来切换要构建的版本*
 
->**Stable**
+>**稳定版**
 >```
 >git checkout main
 >```
->**Development**
+>**开发版**
 >```
 >git checkout Dev
 >```
