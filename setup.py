@@ -1,11 +1,14 @@
 import setuptools
+import os
+
+os.system(r"mv .\docs\README.md .")
 
 with open(r"README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="Gh-Robots",
-    version="V0.0.5",
+    version="0.0.5",
     author="CoolPlayLin",
     author_email="help@api-coolplaylin.eu.org",
     description="A Github API-based Robot",
