@@ -26,6 +26,10 @@ jobs:
         pip install build
     - name: Build package
       run: python -m build
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Upload
+        path: dist/
   Checking:
     runs-on: ubuntu-latest
     steps:
