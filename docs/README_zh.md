@@ -17,7 +17,7 @@
 <p align="center">
 <a>简体中文 </a>
 ·
-<a href="./README.md">English</a>
+<a href="../README.md">English</a>
 </p>
 
 ##  **安装**

@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-<a href="./README_zh.md">简体中文 </a>
+<a href="./docs/README_zh.md">简体中文 </a>
 ·
 <a>English </a>
 </p>
@@ -26,7 +26,7 @@
 pip install Gh-Robots
 ```
 
-[Mirror Station](./Mirror.md)
+[Mirror Station](./docs/Mirror.md)
 
 # 🥰 Build
 
