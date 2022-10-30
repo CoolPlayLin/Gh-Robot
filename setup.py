@@ -1,7 +1,7 @@
 import setuptools
 import os
 
-os.system(r"mv .\docs\README.md .")
+os.system(r"mv .//docs//README.md .")
 
 with open(r"README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
