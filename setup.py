@@ -7,7 +7,7 @@ while True:
             long_description = fh.read()
         break
     except:
-        with open(r".\docs\README.md", "r", encoding="utf-8") as fh:
+        with open(r"./docs/README.md", "r", encoding="utf-8") as fh:
             with open("README.md", "w+", encoding="utf-8") as writer:
                 writer.write(fh.read())
 
