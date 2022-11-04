@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-<a href="./docs/README_zh.md">简体中文 </a>
+<a href="./README-zh.md">简体中文 </a>
 ·
 <a>English </a>
 </p>
@@ -26,11 +26,15 @@
 pip install Gh-Robots
 ```
 
-[Mirror Station](./docs/Mirror.md)
+[Mirror Station](./Mirror.md)
 
 # 🥰 Build
 
-### **Clone Repo**
+*You can use automated scripts or manual builds locally.*
+
+## Self-Build
+
+**Clone Repo**
 
 ```
 git clone https://github.com/CoolPlayLin/Gh-Robot
@@ -38,17 +42,17 @@ git clone https://github.com/CoolPlayLin/Gh-Robot
 cd Gh-Robot
 ```
 
-### **Install Build**
+**Install Build**
 ```
 pip install build
 ```
 
-### **Build**
+**Build**
 ```
 python -m build
 ```
 
-### Checkout
+Checkout
 >*You can choose to use the stable or development version*
 
 >**Stable**
@@ -59,3 +63,22 @@ python -m build
 >```
 >git checkout Dev
 >```
+
+## Auto Build
+
+[Linux](https://cdn.api-go.asia/Auto/build-linux.sh)
+[Windows](https://cdn.api-go.asia/Auto/build-win.bat)
+
+**Linux**
+
+>[Main](https://cdn.api-go.asia/Auto/build-linux.sh)
+>[Dev](https://cdn.api-go.asia/Auto/build-Dev-linux.sh)
+
+**Windows**
+
+>[Main](https://cdn.api-go.asia/Auto/build-win.bat)
+>[Dev](https://cdn.api-go.asia/Auto/build-Dev-win.bat)
+
+**Note**
+
+Your computer must have `Git` and `Python` with `pip` installed to build automatically and manually using this script

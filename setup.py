@@ -1,11 +1,17 @@
 import setuptools
-import os
 
-os.system(r"mv .//docs//README.md .")
+# 读取README文件
+while True:
+    try:
+        with open("README.md", "r", encoding="utf-8") as fh:
+            long_description = fh.read()
+        break
+    except:
+        with open(r"./docs/README.md", "r", encoding="utf-8") as fh:
+            with open("README.md", "w+", encoding="utf-8") as writer:
+                writer.write(fh.read())
 
-with open(r"README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
-
+# 设置主体
 setuptools.setup(
     name="Gh-Robots",
     version="0.0.5",
