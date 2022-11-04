@@ -68,13 +68,13 @@ python -m build
 
 **Linux**
 
-[Main](https://cdn.api-go.asia/Auto/build-linux.sh)
-[Dev](https://cdn.api-go.asia/Auto/build-Dev-linux.sh)
+>[Main](https://cdn.api-go.asia/Auto/build-linux.sh)
+>[Dev](https://cdn.api-go.asia/Auto/build-Dev-linux.sh)
 
 **Windows**
 
-[Main](https://cdn.api-go.asia/Auto/build-win.bat)
-[Dev](https://cdn.api-go.asia/Auto/build-Dev-win.bat)
+>[Main](https://cdn.api-go.asia/Auto/build-win.bat)
+>[Dev](https://cdn.api-go.asia/Auto/build-Dev-win.bat)
 
 **注意**
 
