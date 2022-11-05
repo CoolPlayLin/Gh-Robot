@@ -66,9 +66,6 @@ Checkout
 
 ## Auto Build
 
-[Linux](https://cdn.api-go.asia/Auto/build-linux.sh)
-[Windows](https://cdn.api-go.asia/Auto/build-win.bat)
-
 **Linux**
 
 >[Main](https://cdn.api-go.asia/Auto/build-linux.sh)
