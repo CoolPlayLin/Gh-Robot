@@ -1,0 +1,22 @@
+name: Checking
+
+on:
+  pull_request:
+    types:
+      - "opened"
+      - "reopened"
+      - "edited"
+      - "synchronize"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  Checking:
+      runs-on: ubuntu-latest
+      steps:
+        - name: 'Checkout Repository'
+          uses: actions/checkout@v3
+        - name: 'Dependency Review'
+          uses: actions/dependency-review-action@v2
