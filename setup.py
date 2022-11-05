@@ -7,37 +7,39 @@ EndTimes = 0
 READMEFile = "README.md"
 Any_Error = False
 Debug = False
+DocsPath = "./docs/"
+long_description = None
 
-def main():
+def RUNStatus():
     global EndTimes
-    global RUN
-    global READMEFile
     global Any_Error
-    global Debug
+    global long_description
 
-    while RUN:
-        if EndTimes > 5 or Any_Error:
-            try:
-                os.remove(READMEFile)
-            except:
-                pass
-            return 1
-        try:
-            with open(READMEFile, "r", encoding="utf-8") as fh:
-                long_description = fh.read()
-            RUN = False
-        except:
-            try:
-                with open(r"./docs/"+READMEFile, "r", encoding="utf-8") as fh:
-                    with open(READMEFile, "w+", encoding="utf-8") as writer:
-                        writer.write(fh.read())
-            except Exception as Error:
-                if Debug:
-                    print(Error)
-                Any_Error = True
-        EndTimes += 1
+    if EndTimes > 5 or Any_Error or not bool(long_description):
+        if not bool(long_description):
+            print("long_description value does not exist")
+        elif EndTimes > 5:
+            print("code is stuck in an unusual loop")
+        elif Any_Error:
+            print("Read/write README file error")
+        exit(1)
     else:
-        setuptools.setup(
+        return 0
+
+# 运行清理
+def Clean():
+    global READMEFile
+
+    try:
+        os.remove(READMEFile)
+    except:
+        pass
+    return 0
+
+def SetupDate():
+    global long_description
+
+    setuptools.setup(
             name="Gh-Robots",
             version="0.0.5",
             author="CoolPlayLin",
@@ -66,15 +68,39 @@ def main():
                 "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
             ]
         )
-        return 0
 
-def RUNStatus():
+def main():
     global EndTimes
+    global RUN
+    global READMEFile
+    global DocsPath
     global Any_Error
+    global Debug
+    global long_description
 
-    if EndTimes > 5 or Any_Error:
-        exit(1)
+    while RUN:
+        if EndTimes > 5 or Any_Error:
+            Clean()
+            return 1
+        try:
+            with open(READMEFile, "r", encoding="utf-8") as fh:
+                long_description = fh.read()
+            RUN = False
+        except:
+            try:
+                with open(DocsPath+READMEFile, "r", encoding="utf-8") as fh:
+                    with open(READMEFile, "w+", encoding="utf-8") as writer:
+                        writer.write(fh.read())
+            except Exception as Error:
+                if Debug:
+                    print(Error)
+                Any_Error = True
+        EndTimes += 1
     else:
+        if bool(long_description) == False:
+            Clean()
+            return 1
+        SetupDate()
         return 0
 
 if __name__ == "__main__":
