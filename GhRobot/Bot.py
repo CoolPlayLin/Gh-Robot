@@ -61,6 +61,6 @@ def GetLatestDownloadURL(User, Repo, Order):
   LoadJson = json.loads(IntJson, strict=False)
   try:
     return(LoadJson["assets"][Order]["browser_download_url"])
-  except Exception as WhyError:
-      print(WhyError)
+  except Exception as Error:
+      print(Error)
       return(1)

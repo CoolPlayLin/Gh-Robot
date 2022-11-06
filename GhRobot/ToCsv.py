@@ -79,8 +79,8 @@ def GetAllRepoInformationToCSV(User):
                 x += 1
     except IndexError:
         return(0)
-    except Exception as WhyError:
-        print(WhyError)
+    except Exception as Error:
+        print(Error)
         return(1)
 
 # 提取Repo搜索结果到CSV
@@ -112,8 +112,8 @@ def SearchRepoToCSV(Repo, Amount):
                 x += 1
     except IndexError:
         return(0)
-    except Exception as WhyError:
-        print(WhyError)
+    except Exception as Error:
+        print(Error)
         return(1)
 
 # 提取User搜索结果到CSV
@@ -145,6 +145,6 @@ def SearchUserToCSV(User, Amount):
                 x += 1
     except IndexError:
         return(0)
-    except Exception as WhyError:
-        print(WhyError)
+    except Exception as Error:
+        print(Error)
         return(1)

@@ -1,9 +1,12 @@
+"""
+This file is only for library packaging, if you are not a professional, please do not modify this file, because the modification may cause packaging failure or other problems.
+"""
 import setuptools
 import os
+import time
 
 # 运行必须变量
 RUN = True
-EndTimes = 0
 READMEFile = "README.md"
 Any_Error = False
 Debug = False
@@ -11,17 +14,9 @@ DocsPath = "./docs/"
 long_description = None
 
 def RUNStatus():
-    global EndTimes
     global Any_Error
-    global long_description
 
-    if EndTimes > 5 or Any_Error or not bool(long_description):
-        if not bool(long_description):
-            print("long_description value does not exist")
-        elif EndTimes > 5:
-            print("code is stuck in an unusual loop")
-        elif Any_Error:
-            print("Read/write README file error")
+    if Any_Error:
         exit(1)
     else:
         return 0
@@ -30,15 +25,17 @@ def RUNStatus():
 def Clean():
     global READMEFile
 
+    DebugLogger(Event="Cleanup is running")
     try:
         os.remove(READMEFile)
+        DebugLogger(Event="Cleanup completed successfully")
     except:
-        pass
+        DebugLogger(Warning="An error occurred while cleaning the file")
     return 0
 
 def SetupDate():
     global long_description
-
+    DebugLogger(Event="The SetupDate function is successfully called")
     setuptools.setup(
             name="Gh-Robots",
             version="0.0.5",
@@ -68,9 +65,25 @@ def SetupDate():
                 "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
             ]
         )
+    DebugLogger(Event="The call to the SetupDate function completed successfully")
+    return 0
+
+def DebugLogger(Error=None, Event=None, Warning=None):
+    global Debug
+
+    if Debug:
+        with open("Build.log", "a", encoding="utf-8") as Pen: 
+            if Event is not None:
+                Pen.writelines("{} Event: {}\n".format(time.strftime('%Y-%m-%d %H:%M:%S'), Event))
+            if Warning is not None:
+                Pen.writelines("{} Warning: {}\n".format(time.strftime('%Y-%m-%d %H:%M:%S'), Warning))
+                Pen.writelines("\n")
+            if Error is not None:
+                Pen.writelines("{} Error: {}\n".format(time.strftime('%Y-%m-%d %H:%M:%S'), Error))
+                Pen.writelines("\n")
 
 def main():
-    global EndTimes
+    EndTimes = 0
     global RUN
     global READMEFile
     global DocsPath
@@ -79,28 +92,39 @@ def main():
     global long_description
 
     while RUN:
-        if EndTimes > 5 or Any_Error:
+        if Any_Error or EndTimes >= 10:
             Clean()
-            return 1
+            if EndTimes >= 10:
+                Any_Error = True
+                DebugLogger(Error="The number of attempts to read/rebuild the README file has exceeded the limit")
+                return 1
+            elif Any_Error:
+                return 1
         try:
             with open(READMEFile, "r", encoding="utf-8") as fh:
                 long_description = fh.read()
             RUN = False
-        except:
+            DebugLogger(Event="The README file read completed successfully")
+        except Exception as Error:
+            DebugLogger(Warning=Error)
             try:
+                DebugLogger(Warning="The README file failed to read, an attempt is being made to rebuild this file")
                 with open(DocsPath+READMEFile, "r", encoding="utf-8") as fh:
                     with open(READMEFile, "w+", encoding="utf-8") as writer:
                         writer.write(fh.read())
+                        DebugLogger(Event="The README file reconstruction completed successfully")
             except Exception as Error:
-                if Debug:
-                    print(Error)
+                DebugLogger(Error=Error)
                 Any_Error = True
         EndTimes += 1
     else:
-        if bool(long_description) == False:
+        if long_description is None:
+            DebugLogger(Error="long_description value does not exist")
+            Any_Error = True
             Clean()
             return 1
-        SetupDate()
+        else:
+            SetupDate()
         return 0
 
 if __name__ == "__main__":

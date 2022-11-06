@@ -32,8 +32,8 @@ def SearchRepo(Repo, Amount):
             x += 1
     except IndexError:
         return(json.dumps(Date, ensure_ascii=False))
-    except Exception as WhyError:
-        print(WhyError)
+    except Exception as Error:
+        print(Error)
         return(1)
 
 # 提取User搜索结果到JSON
@@ -66,8 +66,8 @@ def SearchUser(User, Amount):
             x += 1
     except IndexError:
         return(json.dumps(Date, ensure_ascii=False))
-    except Exception as WhyError:
-        print(WhyError)
+    except Exception as Error:
+        print(Error)
         return(1)
 
 # 生成指定数量的Repo搜索结果到JSON
