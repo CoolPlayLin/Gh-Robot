@@ -8,8 +8,8 @@ def GetAndLoadJsonFromURL(URL, UseLoadJSON=False, SSL=True):
         requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
     try:
         InitJSON = requests.get(url=URL, verify=bool(SSL)).text
-    except requests.exceptions.SSLError as WhyError:
-        print('\033[4;31m'+str(WhyError)+'\033[0m')
+    except requests.exceptions.SSLError as Error:
+        print('\033[4;31m'+str(Error)+'\033[0m')
         return(1)
     except:
         return(1)
