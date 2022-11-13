@@ -1,24 +1,55 @@
 """
 This file is only for library packaging, if you are not a professional, please do not modify this file, because the modification may cause packaging failure or other problems.
 """
-import setuptools
-import os
-import time
+try:
+    import setuptools
+    import os
+    import time
+except Exception as Error:
+    print("Program initialization error.")
+    print(Error)
+    exit(1)
 
 # 运行必须变量
 RUN = True
 READMEFile = "README.md"
 Any_Error = False
-Debug = False
+Debug = True
 DocsPath = "./docs/"
 long_description = None
+TIMEFormat = "%Y-%m-%d %H:%M:%S"
+
+def DebugLogger(Error=None, Event=None, Warning=None, Template=None):
+    global Debug
+    global TIMEFormat
+
+    if Debug:
+        with open("Build.log", "a", encoding="utf-8") as Pen: 
+            try:
+                if Event is not None:
+                    Pen.writelines("{} Event: {}".format(time.strftime(TIMEFormat), Event))
+                if Warning is not None:
+                    Pen.writelines("{} Warning: {}".format(time.strftime(TIMEFormat), Warning))
+                if Error is not None:
+                    Pen.writelines("{} Error: {}".format(time.strftime(TIMEFormat), Error))
+                if Template is not None and type(Template) == int:
+                    if Template == 0:
+                        Pen.writelines("All Done")
+                    elif Template == 1:
+                        Pen.writelines("The program exits abnormally.")
+                    Pen.writelines("\n")
+            except Exception as Error:
+                Pen.writelines("{} An error occurred with the logger: {}\n".format(time.strftime(TIMEFormat) ,Error))
+            Pen.writelines("\n")
 
 def RUNStatus():
     global Any_Error
 
     if Any_Error:
+        DebugLogger(Template=1)
         exit(1)
     else:
+        DebugLogger(Template=0)
         return 0
 
 # 运行清理
@@ -68,20 +99,6 @@ def SetupDate():
     DebugLogger(Event="The call to the SetupDate function completed successfully")
     return 0
 
-def DebugLogger(Error=None, Event=None, Warning=None):
-    global Debug
-
-    if Debug:
-        with open("Build.log", "a", encoding="utf-8") as Pen: 
-            if Event is not None:
-                Pen.writelines("{} Event: {}\n".format(time.strftime('%Y-%m-%d %H:%M:%S'), Event))
-            if Warning is not None:
-                Pen.writelines("{} Warning: {}\n".format(time.strftime('%Y-%m-%d %H:%M:%S'), Warning))
-                Pen.writelines("\n")
-            if Error is not None:
-                Pen.writelines("{} Error: {}\n".format(time.strftime('%Y-%m-%d %H:%M:%S'), Error))
-                Pen.writelines("\n")
-
 def main():
     EndTimes = 0
     global RUN
@@ -93,19 +110,16 @@ def main():
 
     while RUN:
         if Any_Error or EndTimes >= 10:
-            Clean()
             if EndTimes >= 10:
-                Any_Error = True
                 DebugLogger(Error="The number of attempts to read/rebuild the README file has exceeded the limit")
-                return 1
-            elif Any_Error:
-                return 1
+            break
+
         try:
             with open(READMEFile, "r", encoding="utf-8") as fh:
                 long_description = fh.read()
             RUN = False
             DebugLogger(Event="The README file read completed successfully")
-        except Exception as Error:
+        except FileNotFoundError as Error:
             DebugLogger(Warning=Error)
             try:
                 DebugLogger(Warning="The README file failed to read, an attempt is being made to rebuild this file")
@@ -115,7 +129,10 @@ def main():
                         DebugLogger(Event="The README file reconstruction completed successfully")
             except Exception as Error:
                 DebugLogger(Error=Error)
-                Any_Error = True
+                break
+        except Exception as Error:
+                DebugLogger(Error=Error)
+                break
         EndTimes += 1
     else:
         if long_description is None:
@@ -126,6 +143,10 @@ def main():
         else:
             SetupDate()
         return 0
+
+    Clean()
+    Any_Error = True
+    return 1
 
 if __name__ == "__main__":
     main()
