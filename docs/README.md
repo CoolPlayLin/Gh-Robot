@@ -1,3 +1,9 @@
+**本项目已并入Technology-Note (https://github.com/CoolPlayLin/Technology-Note) 中，本仓库现已弃用**
+
+**本项目已并入Technology-Note (https://github.com/CoolPlayLin/Technology-Note) 中，本仓库现已弃用**
+
+**本项目已并入Technology-Note (https://github.com/CoolPlayLin/Technology-Note) 中，本仓库现已弃用**
+
 # Gh-Robot
 
 <p align="center">
